@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: Jade Diabetes REST Authentication Predictions API
+  version: '1.0'
+  description: Jade Diabetes (Manage BGL) REST API for reading and writing diabetes management data securely — blood glucose logs, insulin doses, carbohydrate entries, user settings/ratios, and BGL predictions. Faithfully modeled from the provider's published REST reference at https://jadediabetes.com/api/api-rest/index.html. This is an API Evangelist enrichment artifact generated from the public documentation, not a provider-published specification.
+  x-apievangelist-provenance:
+    generated: '2026-07-20'
+    method: generated
+    source: https://jadediabetes.com/api/api-rest/index.html
+  contact:
+    name: Jade Diabetes Support
+    email: Support@JadeDiabetes.com
+    url: https://jadediabetes.com/contact/index.html
+servers:
+- url: https://app.jadediabetes.com/api/1.0
+  description: Production API (v1.0)
+security:
+- clientToken: []
+tags:
+- name: Predictions
+  description: Subscriber-only BGL prediction and dose features
+paths:
+  /predict:
+    post:
+      tags:
+      - Predictions
+      operationId: predict
+      summary: Retrieve BGL predictions (subscribers only)
+      description: Predict blood glucose levels hours ahead. Subscriber-only.
+      responses:
+        '200':
+          description: Predictions
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  responses:
+    Unauthorized:
+      description: Expired or invalid token
+  securitySchemes:
+    clientToken:
+      type: apiKey
+      in: query
+      name: token
+      description: Client login token (varchar 40) obtained from POST /login (or the OAuth-style /get_token.html for sensitive data). Passed as the `token` parameter on every subsequent request. HTTPS/SSL required.

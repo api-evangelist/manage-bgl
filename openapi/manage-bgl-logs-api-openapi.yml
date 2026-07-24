@@ -1,0 +1,163 @@
+openapi: 3.0.3
+info:
+  title: Jade Diabetes REST Authentication Logs API
+  version: '1.0'
+  description: Jade Diabetes (Manage BGL) REST API for reading and writing diabetes management data securely — blood glucose logs, insulin doses, carbohydrate entries, user settings/ratios, and BGL predictions. Faithfully modeled from the provider's published REST reference at https://jadediabetes.com/api/api-rest/index.html. This is an API Evangelist enrichment artifact generated from the public documentation, not a provider-published specification.
+  x-apievangelist-provenance:
+    generated: '2026-07-20'
+    method: generated
+    source: https://jadediabetes.com/api/api-rest/index.html
+  contact:
+    name: Jade Diabetes Support
+    email: Support@JadeDiabetes.com
+    url: https://jadediabetes.com/contact/index.html
+servers:
+- url: https://app.jadediabetes.com/api/1.0
+  description: Production API (v1.0)
+security:
+- clientToken: []
+tags:
+- name: Logs
+  description: Creating, updating, deleting, and extracting diabetes log data
+paths:
+  /add:
+    post:
+      tags:
+      - Logs
+      operationId: addLog
+      summary: Log a single entry
+      description: Add a single diabetes log entry (BGL, insulin, carbohydrates, notes).
+      responses:
+        '200':
+          description: Entry logged
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '503':
+          $ref: '#/components/responses/RateLimited'
+  /add_logs:
+    post:
+      tags:
+      - Logs
+      operationId: addLogs
+      summary: Log multiple entries
+      responses:
+        '200':
+          description: Entries logged
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /add_deleted:
+    post:
+      tags:
+      - Logs
+      operationId: addDeleted
+      summary: Record a deleted log entry
+      responses:
+        '200':
+          description: Recorded
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /update:
+    post:
+      tags:
+      - Logs
+      operationId: updateLog
+      summary: Modify a log entry
+      responses:
+        '200':
+          description: Entry updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /update_logs:
+    post:
+      tags:
+      - Logs
+      operationId: updateLogs
+      summary: Modify multiple log entries
+      responses:
+        '200':
+          description: Entries updated
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /delete:
+    post:
+      tags:
+      - Logs
+      operationId: deleteLog
+      summary: Remove a log entry
+      responses:
+        '200':
+          description: Entry removed
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /extract:
+    get:
+      tags:
+      - Logs
+      operationId: extract
+      summary: Retrieve log data by date range
+      description: Retrieve diabetes log data for a UTC date range (Y-m-d H:i:s).
+      responses:
+        '200':
+          description: Log data
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /log_range:
+    get:
+      tags:
+      - Logs
+      operationId: logRange
+      summary: Get the first and last log dates available
+      responses:
+        '200':
+          description: Date range
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /sync_status:
+    get:
+      tags:
+      - Logs
+      operationId: syncStatus
+      summary: Check the latest sync timestamp
+      responses:
+        '200':
+          description: Sync status
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /import:
+    post:
+      tags:
+      - Logs
+      operationId: importData
+      summary: Import diabetes data files
+      description: Import diabetes data files (subscriber feature).
+      responses:
+        '200':
+          description: Import accepted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  responses:
+    Unauthorized:
+      description: Expired or invalid token
+    RateLimited:
+      description: Rate limit exceeded (per-app and per-user)
+    BadRequest:
+      description: Invalid input parameter
+    NotFound:
+      description: Resource not found
+  securitySchemes:
+    clientToken:
+      type: apiKey
+      in: query
+      name: token
+      description: Client login token (varchar 40) obtained from POST /login (or the OAuth-style /get_token.html for sensitive data). Passed as the `token` parameter on every subsequent request. HTTPS/SSL required.
