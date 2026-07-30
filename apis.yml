@@ -1,7 +1,16 @@
 aid: manage-bgl
 name: Manage BGL
-description: Manage BGL is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Manage BGL is the diabetes-management platform from Jade Diabetes, a Melbourne,
+  Australia company whose iOS and Android app helps people with Type 1, Type 1.5,
+  Type 2, gestational, and LADA diabetes track blood glucose levels and calculate
+  insulin doses. Jade tracks 64 types of diabetes data, calculates doses from
+  carbohydrates, protein, fat, fiber, insulin-on-board and personalized factors,
+  and offers a prediction engine that forecasts blood sugar hours ahead. It
+  integrates with Dexcom, FreeStyle Libre, NightScout, fitness and food apps, and
+  more than 60 diabetic devices, and supports live data sharing with care teams
+  for remote patient monitoring. Jade exposes a public REST API (v1.0) so
+  developers and partners can read and write diabetes data securely.
 url: https://raw.githubusercontent.com/api-evangelist/manage-bgl/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,17 +18,200 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://jadediabetes.com/favicon.ico
 tags:
 - Company
-apis: []
+- Diabetes
+- Health
+- Healthcare
+- Digital Health
+- Insulin
+- Blood Glucose
+- Remote Patient Monitoring
+- Telemedicine
+- REST API
+apis:
+- aid: manage-bgl:manage-bgl-authentication-api
+  name: Manage BGL Authentication API
+  description: Account creation, login, token, and session operations
+  humanURL: https://jadediabetes.com/api/index.html
+  baseURL: https://app.jadediabetes.com/api/1.0
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/manage-bgl-authentication-api-openapi.yml
+  - type: APIReference
+    url: https://jadediabetes.com/api/api-rest/index.html
+  - type: Authentication
+    url: authentication/manage-bgl-authentication.yml
+  - type: Conventions
+    url: conventions/manage-bgl-conventions.yml
+  - type: ErrorCatalog
+    url: errors/manage-bgl-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/manage-bgl-lifecycle.yml
+  - type: DataModel
+    url: data-model/manage-bgl-data-model.yml
+- aid: manage-bgl:manage-bgl-logs-api
+  name: Manage BGL Logs API
+  description: Creating, updating, deleting, and extracting diabetes log data
+  humanURL: https://jadediabetes.com/api/index.html
+  baseURL: https://app.jadediabetes.com/api/1.0
+  tags:
+  - Logs
+  properties:
+  - type: OpenAPI
+    url: openapi/manage-bgl-logs-api-openapi.yml
+  - type: APIReference
+    url: https://jadediabetes.com/api/api-rest/index.html
+  - type: Authentication
+    url: authentication/manage-bgl-authentication.yml
+  - type: Conventions
+    url: conventions/manage-bgl-conventions.yml
+  - type: ErrorCatalog
+    url: errors/manage-bgl-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/manage-bgl-lifecycle.yml
+  - type: DataModel
+    url: data-model/manage-bgl-data-model.yml
+- aid: manage-bgl:manage-bgl-predictions-api
+  name: Manage BGL Predictions API
+  description: Subscriber-only BGL prediction and dose features
+  humanURL: https://jadediabetes.com/api/index.html
+  baseURL: https://app.jadediabetes.com/api/1.0
+  tags:
+  - Predictions
+  properties:
+  - type: OpenAPI
+    url: openapi/manage-bgl-predictions-api-openapi.yml
+  - type: APIReference
+    url: https://jadediabetes.com/api/api-rest/index.html
+  - type: Authentication
+    url: authentication/manage-bgl-authentication.yml
+  - type: Conventions
+    url: conventions/manage-bgl-conventions.yml
+  - type: ErrorCatalog
+    url: errors/manage-bgl-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/manage-bgl-lifecycle.yml
+  - type: DataModel
+    url: data-model/manage-bgl-data-model.yml
+- aid: manage-bgl:manage-bgl-settings-api
+  name: Manage BGL Settings API
+  description: User ratios and configuration
+  humanURL: https://jadediabetes.com/api/index.html
+  baseURL: https://app.jadediabetes.com/api/1.0
+  tags:
+  - Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/manage-bgl-settings-api-openapi.yml
+  - type: APIReference
+    url: https://jadediabetes.com/api/api-rest/index.html
+  - type: Authentication
+    url: authentication/manage-bgl-authentication.yml
+  - type: Conventions
+    url: conventions/manage-bgl-conventions.yml
+  - type: ErrorCatalog
+    url: errors/manage-bgl-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/manage-bgl-lifecycle.yml
+  - type: DataModel
+    url: data-model/manage-bgl-data-model.yml
+- aid: manage-bgl:manage-bgl-system-api
+  name: Manage BGL System API
+  description: Health checks and operational status
+  humanURL: https://jadediabetes.com/api/index.html
+  baseURL: https://app.jadediabetes.com/api/1.0
+  tags:
+  - System
+  properties:
+  - type: OpenAPI
+    url: openapi/manage-bgl-system-api-openapi.yml
+  - type: APIReference
+    url: https://jadediabetes.com/api/api-rest/index.html
+  - type: Authentication
+    url: authentication/manage-bgl-authentication.yml
+  - type: Conventions
+    url: conventions/manage-bgl-conventions.yml
+  - type: ErrorCatalog
+    url: errors/manage-bgl-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/manage-bgl-lifecycle.yml
+  - type: DataModel
+    url: data-model/manage-bgl-data-model.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: AgenticAccess
+  url: agentic-access/manage-bgl-agentic-access.yml
 - type: Website
   url: https://jadediabetes.com
+- type: DeveloperPortal
+  url: https://jadediabetes.com/api/index.html
+- type: APIReference
+  url: https://jadediabetes.com/api/api-rest/index.html
+- type: Documentation
+  url: https://jadediabetes.com/api/api-rest/index.html
+- type: Sandbox
+  url: https://app.jadediabetes.com/api/sample.html
+- type: Pricing
+  url: https://jadediabetes.com/subscribe/index.html
+- type: SignUp
+  url: https://jadediabetes.com/subscribe/index.html
+- type: PrivacyPolicy
+  url: https://jadediabetes.com/policy-privacy/index.html
+- type: Support
+  url: https://jadediabetes.com/contact/index.html
+- type: HelpCenter
+  url: https://jadediabetes.com/faq/index.html
+- type: Compliance
+  url: https://jadediabetes.com/policy-hipaa-phi/index.html
+- type: Authentication
+  url: authentication/manage-bgl-authentication.yml
+- type: Conventions
+  url: conventions/manage-bgl-conventions.yml
+- type: ErrorCatalog
+  url: errors/manage-bgl-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/manage-bgl-lifecycle.yml
+- type: Conformance
+  url: conformance/manage-bgl-conformance.yml
+- type: MCPServer
+  url: mcp/manage-bgl-mcp.yml
+- type: LLMsTxt
+  url: llms/manage-bgl-llms.txt
+- type: WellKnown
+  url: well-known/manage-bgl-well-known.yml
+- type: DomainSecurity
+  url: security/manage-bgl-domain-security.yml
+- type: DataModel
+  url: data-model/manage-bgl-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Overlay
+  url: overlays/manage-bgl-overlay.yaml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 15
+  pass: local-v1
