@@ -1,0 +1,16 @@
+generated: '2026-07-20'
+method: searched
+source: probe of /.well-known/ on Jade Diabetes hosts
+hosts:
+- host: https://app.jadediabetes.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://jadediabetes.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+note: >-
+  No /.well-known/ discovery documents (security.txt, openid-configuration,
+  oauth-authorization-server, api-catalog, ai-plugin.json) were found published
+  on either host at probe time. Empty result is valid.

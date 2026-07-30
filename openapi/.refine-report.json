@@ -1,0 +1,22 @@
+{
+  "provider": "manage-bgl",
+  "sources": [
+    "manage-bgl-authentication-api-openapi.yml",
+    "manage-bgl-logs-api-openapi.yml",
+    "manage-bgl-predictions-api-openapi.yml",
+    "manage-bgl-settings-api-openapi.yml",
+    "manage-bgl-system-api-openapi.yml"
+  ],
+  "outputs": [
+    "manage-bgl-authentication-api-openapi.yml",
+    "manage-bgl-logs-api-openapi.yml",
+    "manage-bgl-predictions-api-openapi.yml",
+    "manage-bgl-settings-api-openapi.yml",
+    "manage-bgl-system-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

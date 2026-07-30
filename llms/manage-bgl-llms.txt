@@ -1,0 +1,30 @@
+# Manage BGL (Jade Diabetes)
+
+> Jade Diabetes ("Manage BGL") is a Melbourne, Australia diabetes-management platform whose iOS/Android app tracks blood glucose, calculates insulin doses, and predicts blood sugar hours ahead for Type 1, Type 1.5, Type 2, gestational, and LADA diabetes. It integrates with Dexcom, FreeStyle Libre, NightScout, and 60+ diabetic devices, and exposes a public REST API (v1.0) to read and write diabetes data securely.
+
+## APIs
+- [Jade Diabetes REST API](https://jadediabetes.com/api/index.html): Read/write diabetes logs, insulin doses, settings, and BGL predictions over HTTPS with token authentication.
+
+## Specs
+- [OpenAPI (generated)](https://raw.githubusercontent.com/api-evangelist/manage-bgl/refs/heads/main/openapi/manage-bgl-openapi.yml): API Evangelist-generated OpenAPI 3.0 modeled from the published REST reference.
+
+## Docs
+- [Developer portal](https://jadediabetes.com/api/index.html)
+- [REST API reference](https://jadediabetes.com/api/api-rest/index.html)
+- [API sample / debugging interface](https://app.jadediabetes.com/api/sample.html)
+- [FAQ / help](https://jadediabetes.com/faq/index.html)
+
+## Artifacts
+- [Authentication profile](https://raw.githubusercontent.com/api-evangelist/manage-bgl/refs/heads/main/authentication/manage-bgl-authentication.yml)
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/manage-bgl/refs/heads/main/conventions/manage-bgl-conventions.yml)
+- [Error catalog](https://raw.githubusercontent.com/api-evangelist/manage-bgl/refs/heads/main/errors/manage-bgl-problem-types.yml)
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/manage-bgl/refs/heads/main/lifecycle/manage-bgl-lifecycle.yml)
+- [Data model](https://raw.githubusercontent.com/api-evangelist/manage-bgl/refs/heads/main/data-model/manage-bgl-data-model.yml)
+- [MCP server (candidate)](https://raw.githubusercontent.com/api-evangelist/manage-bgl/refs/heads/main/mcp/manage-bgl-mcp.yml)
+
+## Company
+- [Website](https://jadediabetes.com)
+- [Pricing / subscribe](https://jadediabetes.com/subscribe/index.html)
+- [Privacy policy](https://jadediabetes.com/policy-privacy/index.html)
+- [HIPAA/PHI policy](https://jadediabetes.com/policy-hipaa-phi/index.html)
+- [Support / contact](https://jadediabetes.com/contact/index.html)

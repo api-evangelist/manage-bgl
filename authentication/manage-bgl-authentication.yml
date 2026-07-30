@@ -1,0 +1,18 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/manage-bgl-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: clientToken
+  type: apiKey
+  in: query
+  parameter: token
+  description: Client login token (varchar 40) obtained from POST /login (or the OAuth-style
+    /get_token.html for sensitive data). Passed as the `token` parameter on every subsequent
+    request. HTTPS/SSL required.
+  sources:
+  - openapi/manage-bgl-openapi.yml

@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://jadediabetes.com/api/api-rest/index.html
+format: http-status
+description: >-
+  Error responses returned by the Jade Diabetes REST API. Errors use standard
+  HTTP status codes; the response body includes JSON-formatted error details.
+  This is not an RFC 9457 problem+json catalog — the provider returns plain
+  JSON error detail objects.
+problems:
+- status: 400
+  title: Invalid input parameter
+  meaning: A required or supplied parameter was missing or invalid.
+  action: Correct the request parameters and retry.
+- status: 401
+  title: Expired or invalid token
+  meaning: The client login token is missing, expired, or invalid.
+  action: Re-authenticate via POST /login (or /get_token.html) to obtain a fresh token.
+- status: 404
+  title: Resource not found
+  meaning: The requested resource or log entry does not exist.
+  action: Verify the identifier and endpoint path.
+- status: 405
+  title: Method not allowed
+  meaning: The HTTP method used is not supported for this endpoint.
+  action: Use the documented GET/POST method for the endpoint.
+- status: 503
+  title: Rate limit exceeded
+  meaning: Per-app and per-user rate limits were exceeded.
+  action: Back off and retry after a delay.

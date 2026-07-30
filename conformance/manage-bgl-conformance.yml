@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source:
+- https://jadediabetes.com/api/api-rest/index.html
+- https://jadediabetes.com/policy-hipaa-phi/index.html
+- https://jadediabetes.com/policy-data-security/index.html
+description: >-
+  Standards and compliance posture for the Jade Diabetes REST API. Compliance
+  claims are sourced from the provider's published HIPAA/PHI and data-security
+  policy pages; protocol conformance is derived from the documented API surface.
+standards:
+- id: hipaa
+  conforms: true
+  evidence: Provider publishes a HIPAA/PHI privacy policy (policy-hipaa-phi) and data-security policy.
+- id: oauth2
+  conforms: false
+  evidence: Uses a client login token (apiKey style) plus an OAuth-style /get_token.html exchange; not a full OAuth 2.0 authorization framework.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use HTTP status codes with plain JSON detail bodies, not application/problem+json.
+- id: tls-required
+  conforms: true
+  evidence: API mandates SSL/HTTPS for all requests.
+- id: fhir-r4
+  conforms: false
+  evidence: Proprietary diabetes log schema; no FHIR resource shapes documented.

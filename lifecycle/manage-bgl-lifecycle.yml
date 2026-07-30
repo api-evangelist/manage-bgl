@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: https://jadediabetes.com/api/api-rest/index.html
+versioning:
+  scheme: uri-path
+  current: "1.0"
+  detail: API version is carried in the base path (/api/1.0/).
+  docs: https://jadediabetes.com/api/api-rest/index.html
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No published deprecation policy or RFC 8594 Sunset/Deprecation header support found.
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    No published SLA. GET /ping and GET /ping_db expose live API and database
+    health checks in lieu of a public status page.
+status_page: null
+deprecated_operations: []

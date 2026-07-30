@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/manage-bgl-openapi.yml
+description: >-
+  Entity-relationship model derived from the documented Jade Diabetes REST API
+  operations. The provider does not publish a formal object reference, so
+  entities and relationships are inferred from the operation surface.
+entities:
+- name: Account
+  description: A Jade Diabetes user account, created via create_account and authenticated via login.
+  operations: [createAccount, login, logout, getToken, nonce]
+- name: LogEntry
+  description: >-
+    A single diabetes data point (blood glucose, insulin, carbohydrate, note),
+    timestamped in UTC. Carries a client-supplied GUID for sync de-duplication.
+  operations: [addLog, addLogs, updateLog, updateLogs, deleteLog, addDeleted, extract, logRange]
+- name: Settings
+  description: User ratios and configuration (dose factors, targets).
+  operations: [getSettings, uploadAvatar]
+- name: Prediction
+  description: Forecast of future blood glucose levels (subscriber-only).
+  operations: [predict]
+relationships:
+- from: LogEntry
+  to: Account
+  kind: belongs_to
+  via: token
+- from: Settings
+  to: Account
+  kind: belongs_to
+  via: token
+- from: Prediction
+  to: Account
+  kind: belongs_to
+  via: token
+- from: Prediction
+  to: LogEntry
+  kind: has_many
+  via: date-range

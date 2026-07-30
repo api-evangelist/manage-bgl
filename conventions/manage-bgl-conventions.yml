@@ -1,0 +1,55 @@
+generated: '2026-07-20'
+method: searched
+source: https://jadediabetes.com/api/api-rest/index.html
+description: >-
+  Cross-cutting request/response conventions for the Jade Diabetes REST API,
+  captured from the published REST reference.
+transport:
+  scheme: https
+  tls_required: true
+  encoding: UTF-8
+base_path: /api/1.0
+authentication:
+  style: client-login-token
+  parameter: token
+  detail: >-
+    Token (varchar 40) obtained from POST /login or the OAuth-style
+    /get_token.html; passed as the `token` parameter on every request.
+  ref: authentication/manage-bgl-authentication.yml
+content_negotiation:
+  default: xml
+  mechanism: endpoint-suffix
+  formats:
+  - json   # append .json
+  - xml    # append .xml
+  - amf    # append .amf
+  - plist  # append .plist
+  - yaml   # append .yaml
+datetime:
+  format: "YYYY-MM-DD HH:ii:ss"
+  timezone: UTC
+  example: "2012-12-31 22:31:20"
+pagination:
+  style: date-range
+  detail: >-
+    Bulk data retrieval (GET /extract) is scoped by a start/end date range
+    rather than page cursors; GET /log_range returns the first and last
+    available log dates.
+idempotency:
+  supported: false
+  note: >-
+    No documented idempotency-key header. Log entries carry a client-supplied
+    GUID which can help de-duplicate on sync, but the provider does not document
+    a formal idempotency contract.
+error_handling:
+  style: http-status
+  body: json-detail
+  ref: errors/manage-bgl-problem-types.yml
+rate_limiting:
+  supported: true
+  scope: [per-app, per-user]
+  signal: HTTP 503 on exceed
+versioning:
+  scheme: uri-path
+  current: "1.0"
+  ref: lifecycle/manage-bgl-lifecycle.yml

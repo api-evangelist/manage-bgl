@@ -1,0 +1,12 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/manage-bgl-openapi.yml
+skills:
+- file: manage-bgl-log-and-extract.md
+  name: Authenticate, log a reading, and extract diabetes data
+  api: openapi/manage-bgl-openapi.yml
+  operations: [login, addLog, extract, logout]
+- file: manage-bgl-predict-bgl.md
+  name: Retrieve blood-glucose predictions for a subscriber
+  api: openapi/manage-bgl-openapi.yml
+  operations: [login, getSettings, predict]
