@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Jade Diabetes REST Authentication System API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "token",
+      "value": "{{token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "System",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Verify API operational status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.jadediabetes.com/api/1.0/ping"
+          },
+          "docs": "Verify API operational status"
+        },
+        {
+          "info": {
+            "name": "Verify database operational status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.jadediabetes.com/api/1.0/ping_db"
+          },
+          "docs": "Verify database operational status"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

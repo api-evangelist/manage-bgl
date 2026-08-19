@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Jade Diabetes REST Authentication Settings API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "token",
+      "value": "{{token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Settings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get user ratios and configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.jadediabetes.com/api/1.0/settings"
+          },
+          "docs": "Get user ratios and configuration"
+        },
+        {
+          "info": {
+            "name": "Upload a user avatar",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.jadediabetes.com/api/1.0/avatar"
+          },
+          "docs": "Upload a user avatar"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,169 @@
+{
+  "item": [
+    {
+      "id": "8f066807-9b5b-46fa-9f55-c260b85742d5",
+      "name": "System",
+      "description": {
+        "content": "Health checks and operational status",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0cd43680-60e4-4dda-9216-8bcb81d56ae4",
+          "name": "Verify API operational status",
+          "request": {
+            "name": "Verify API operational status",
+            "description": {},
+            "url": {
+              "path": [
+                "ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ccd90c76-fbdb-48cc-84f1-65b4c9037767",
+              "name": "API healthy",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ping"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "43c3c675-e61c-49b9-8f03-2ffa0650c1b7",
+          "name": "Verify database operational status",
+          "request": {
+            "name": "Verify database operational status",
+            "description": {},
+            "url": {
+              "path": [
+                "ping_db"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d82a7438-7340-4313-b461-5a4f9643e3fe",
+              "name": "Database healthy",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ping_db"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.jadediabetes.com/api/1.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "76000ef7-aaee-475a-b798-10bff43e27b1",
+    "name": "Jade Diabetes REST Authentication System API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Jade Diabetes (Manage BGL) REST API for reading and writing diabetes management data securely — blood glucose logs, insulin doses, carbohydrate entries, user settings/ratios, and BGL predictions. Faithfully modeled from the provider's published REST reference at https://jadediabetes.com/api/api-rest/index.html. This is an API Evangelist enrichment artifact generated from the public documentation, not a provider-published specification.\n\nContact Support:\n Name: Jade Diabetes Support\n Email: Support@JadeDiabetes.com",
+      "type": "text/plain"
+    }
+  }
+}

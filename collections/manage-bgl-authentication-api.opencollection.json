@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Jade Diabetes REST Authentication API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "token",
+      "value": "{{token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Register a new user account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.jadediabetes.com/api/1.0/create_account"
+          },
+          "docs": "Register a new Jade Diabetes user account."
+        },
+        {
+          "info": {
+            "name": "Authenticate and obtain a client login token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.jadediabetes.com/api/1.0/login"
+          },
+          "docs": "Authenticate with email and password and receive a client login token (varchar 40) used on all subsequent requests."
+        },
+        {
+          "info": {
+            "name": "OAuth-style token exchange (preferred for sensitive data)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.jadediabetes.com/api/1.0/get_token.html"
+          },
+          "docs": "OAuth-style token exchange (preferred for sensitive data)"
+        },
+        {
+          "info": {
+            "name": "Invalidate the current token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.jadediabetes.com/api/1.0/logout"
+          },
+          "docs": "Invalidate the current token"
+        },
+        {
+          "info": {
+            "name": "Obtain a one-time web login password",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.jadediabetes.com/api/1.0/nonce"
+          },
+          "docs": "Obtain a one-time web login password"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,136 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Jade Diabetes REST Authentication Logs API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "token",
+      "value": "{{token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Logs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Log a single entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.jadediabetes.com/api/1.0/add"
+          },
+          "docs": "Add a single diabetes log entry (BGL, insulin, carbohydrates, notes)."
+        },
+        {
+          "info": {
+            "name": "Log multiple entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.jadediabetes.com/api/1.0/add_logs"
+          },
+          "docs": "Log multiple entries"
+        },
+        {
+          "info": {
+            "name": "Record a deleted log entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.jadediabetes.com/api/1.0/add_deleted"
+          },
+          "docs": "Record a deleted log entry"
+        },
+        {
+          "info": {
+            "name": "Modify a log entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.jadediabetes.com/api/1.0/update"
+          },
+          "docs": "Modify a log entry"
+        },
+        {
+          "info": {
+            "name": "Modify multiple log entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.jadediabetes.com/api/1.0/update_logs"
+          },
+          "docs": "Modify multiple log entries"
+        },
+        {
+          "info": {
+            "name": "Remove a log entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.jadediabetes.com/api/1.0/delete"
+          },
+          "docs": "Remove a log entry"
+        },
+        {
+          "info": {
+            "name": "Retrieve log data by date range",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.jadediabetes.com/api/1.0/extract"
+          },
+          "docs": "Retrieve diabetes log data for a UTC date range (Y-m-d H:i:s)."
+        },
+        {
+          "info": {
+            "name": "Get the first and last log dates available",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.jadediabetes.com/api/1.0/log_range"
+          },
+          "docs": "Get the first and last log dates available"
+        },
+        {
+          "info": {
+            "name": "Check the latest sync timestamp",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.jadediabetes.com/api/1.0/sync_status"
+          },
+          "docs": "Check the latest sync timestamp"
+        },
+        {
+          "info": {
+            "name": "Import diabetes data files",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.jadediabetes.com/api/1.0/import"
+          },
+          "docs": "Import diabetes data files (subscriber feature)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
