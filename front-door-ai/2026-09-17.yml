@@ -1,0 +1,25 @@
+# Front Door AI Index — manage-bgl — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: manage-bgl
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: jadediabetes.com
+  final_host: jadediabetes.com
+  ownership: own
+  owner: manage-bgl
+  shares_host_with: null
+  inherited_from: null
+  verdict: silent
+  score: 0
+  host_score: 0
+  density: 0.0
+  words: 1119
+  tiers:
+    agentic: 0
+    core: 0
+    model: 0
+  ambiguous: 3
+  top_terms:
+    predictive: 3

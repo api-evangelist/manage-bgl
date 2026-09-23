@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Jade Diabetes REST Authentication API
   version: '1.0'
@@ -85,10 +85,10 @@ components:
   responses:
     Unauthorized:
       description: Expired or invalid token
-    RateLimited:
-      description: Rate limit exceeded (per-app and per-user)
     BadRequest:
       description: Invalid input parameter
+    RateLimited:
+      description: Rate limit exceeded (per-app and per-user)
   securitySchemes:
     clientToken:
       type: apiKey
