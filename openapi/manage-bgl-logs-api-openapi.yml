@@ -149,12 +149,12 @@ components:
   responses:
     Unauthorized:
       description: Expired or invalid token
+    NotFound:
+      description: Resource not found
     RateLimited:
       description: Rate limit exceeded (per-app and per-user)
     BadRequest:
       description: Invalid input parameter
-    NotFound:
-      description: Resource not found
   securitySchemes:
     clientToken:
       type: apiKey
