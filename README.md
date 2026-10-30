@@ -64,6 +64,124 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Manage BGL is a company surfaced as a portfolio company of 500-global and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Manage BGL is the diabetes-management platform from Jade Diabetes, a Melbourne, Australia company whose iOS and Android app helps people with Type 1, Type 1.5, Type 2, gestational, and LADA diabetes track blood glucose levels and calculate insulin doses. Jade tracks 64 types of diabetes data, calculates doses from carbohydrates, protein, fat, fiber, insulin-on-board and personalized factors, and offers a prediction engine that forecasts blood sugar hours ahead. It integrates with Dexcom, FreeStyle Libre, NightScout, fitness and food apps, and more than 60 diabetic devices, and supports live data sharing with care teams for remote patient monitoring. Jade exposes a public REST API (v1.0) so developers and partners can read and write diabetes data securely.
 
-Backed by: 500-global — https://jadediabetes.com
+**Areas:** Company · Diabetes · Health · Healthcare · Digital Health · Insulin · Blood Glucose · Remote Patient Monitoring · Telehealth · REST API
+
+## Manage BGL on APIs.io
+
+Everything profiled for Manage BGL is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/manage-bgl/](https://apis.io/providers/manage-bgl/)** — or go straight to one of the APIs or properties below.
+
+### APIs (5)
+
+- [Manage BGL Authentication API](https://apis.io/apis/manage-bgl/manage-bgl-authentication-api/) — Account creation, login, token, and session operations
+- [Manage BGL Logs API](https://apis.io/apis/manage-bgl/manage-bgl-logs-api/) — Creating, updating, deleting, and extracting diabetes log data
+- [Manage BGL Predictions API](https://apis.io/apis/manage-bgl/manage-bgl-predictions-api/) — Subscriber-only BGL prediction and dose features
+- [Manage BGL Settings API](https://apis.io/apis/manage-bgl/manage-bgl-settings-api/) — User ratios and configuration
+- [Manage BGL System API](https://apis.io/apis/manage-bgl/manage-bgl-system-api/) — Health checks and operational status
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [manage-bgl](https://apis.io/servers/manage-bgl/manage-bgl/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Manage Bgl Agentic Access](https://apis.io/agentic-access/manage-bgl/manage-bgl-agentic-access/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Jade Diabetes REST Authentication API](https://apis.io/collections/manage-bgl/open-manage-bgl-authentication-api/)
+- [Jade Diabetes REST Authentication Logs API](https://apis.io/collections/manage-bgl/open-manage-bgl-logs-api/)
+- [Jade Diabetes REST Authentication Predictions API](https://apis.io/collections/manage-bgl/open-manage-bgl-predictions-api/)
+- [Jade Diabetes REST Authentication Settings API](https://apis.io/collections/manage-bgl/open-manage-bgl-settings-api/)
+- [Jade Diabetes REST Authentication System API](https://apis.io/collections/manage-bgl/open-manage-bgl-system-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Manage Bgl Overlay](https://apis.io/overlays/manage-bgl/manage-bgl-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Manage Bgl Authentication](https://apis.io/security/manage-bgl/manage-bgl-authentication/)
+- [Manage Bgl Domain Security](https://apis.io/security/manage-bgl/manage-bgl-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://jadediabetes.com)
+- [Documentation](https://jadediabetes.com/api/api-rest/index.html)
+- [API reference](https://jadediabetes.com/api/api-rest/index.html)
+- [Pricing](https://jadediabetes.com/subscribe/index.html)
+- [Sign up](https://jadediabetes.com/subscribe/index.html)
+- [Support](https://jadediabetes.com/contact/index.html)
+- [Blog](https://jadediabetes.com/blog/)
+- [Compliance](https://jadediabetes.com/policy-hipaa-phi/index.html)
+- [Privacy policy](https://jadediabetes.com/policy-privacy/index.html)
+
+## API Evangelist rating
+
+**Kin Score 29.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 54.2 |
+| Access clarity | 42.1 |
+
+**Agent readiness 21.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.3** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/manage-bgl/](https://apis.io/providers/manage-bgl/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Manage BGL: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/manage-bgl/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
